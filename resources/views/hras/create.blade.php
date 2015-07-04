@@ -13,12 +13,16 @@
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                 <div class="form-group">
-                     <label for="empname">EMPNAME</label>
-                     <input type="text" name="empname" class="form-control" value=""/>
+                    <label for="empname">EMPNAME</label>
+                    <select name="empname" class="form-control">
+                        @foreach($employees as $employee)
+                            <option name="{{$employee->id}}">{{$employee->firstname}} {{$employee->firstname}}</option>
+                        @endforeach
+                    </select>
                 </div>
-                    <div class="form-group">
-                     <label for="hra">HRA</label>
-                     <input type="text" name="hra" class="form-control" value=""/>
+                <div class="form-group">
+                    <label for="hra">HRA</label>
+                    <input type="text" name="hra" class="form-control" value=""/>
                 </div>
 
 

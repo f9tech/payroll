@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\HRA;
+use App\Employee;
 use Illuminate\Http\Request;
 
 class HRAController extends Controller {
@@ -27,7 +28,9 @@ class HRAController extends Controller {
 	 */
 	public function create()
 	{
-		return view('hras.create');
+		$employees = Employee::all();
+
+		return view('hras.create',compact('employees'));
 	}
 
 	/**
